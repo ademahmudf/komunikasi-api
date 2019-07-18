@@ -5,10 +5,22 @@
  */
 package Services;
 
+import Entitas.Mahasiswa;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+import java.util.List;
+
 /**
  *
  * @author ngadmin
  */
-public interface ServiceMahasiswa {
-    
+public interface ServiceMahasiswa extends Remote {
+
+    List getMahasiswa() throws RemoteException;//untuk select data menampung data mahasiswa
+
+    void insert(Mahasiswa mahasiswa) throws RemoteException;
+
+    void update(Mahasiswa mahasiswa) throws RemoteException;
+
+    void delete(Mahasiswa mahasiswa) throws RemoteException;
 }
